@@ -1,20 +1,20 @@
 ﻿sorting-algorithms
-1.0.0.0
+
 
 winexe
 C#
 .cs
-C:\Users\kopyt\OneDrive\Pulpit\sorting-algorithms\sorting-algorithms\obj\Debug\net6.0-windows\
+C:\Users\kopyt\OneDrive\Pulpit\sorting-algorithms\sorting-algorithms\obj\Release\net6.0-windows\
 sorting_algorithms
 none
 false
-TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 C:\Users\kopyt\OneDrive\Pulpit\sorting-algorithms\sorting-algorithms\App.xaml
 11407045341
 
-5-538632193
+3-1233169557
 194-1325968647
 MainWindow.xaml;
 
-False
+True
 

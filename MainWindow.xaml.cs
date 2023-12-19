@@ -101,6 +101,48 @@ namespace sorting_algorithms
 
             return i + 1;
         }
+
+        //Bubblesort algorithm
+        private void BubbleSort()
+        {
+            bool swapped;
+
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                swapped = false;
+
+                for (int j = 0; j < numbers.Length - 1 - i; j++)
+                {
+                    if (numbers[j] > numbers[j + 1])
+                    {
+                        int temp = numbers[j];
+                        numbers[j] = numbers[j + 1];
+                        numbers[j + 1] = temp;
+
+                        swapped = true;
+                    }
+                }
+
+                if (!swapped)
+                    break;
+            }
+        }
+
+
+        private void BubbleSortButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                BubbleSort();
+
+                //Display the sorted array
+                tbNumbers.Text = string.Join(", ", numbers);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
 }
 
