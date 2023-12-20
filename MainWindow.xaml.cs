@@ -6,7 +6,7 @@ namespace sorting_algorithms
 {
     public partial class MainWindow : Window
     {
-        private int[] numbers = new int[1000];
+        private int[] numbers = new int[10000];
         private Random random = new Random();
 
         public MainWindow()
@@ -20,7 +20,7 @@ namespace sorting_algorithms
             {
                 for (int i = 0; i < numbers.Length; i++)
                 {
-                    numbers[i] = random.Next(100);
+                    numbers[i] = random.Next(1000);
                 }
 
                 string allNumbers = string.Join(", ", numbers);
@@ -33,6 +33,7 @@ namespace sorting_algorithms
             }
         }
 
+        //QuickSort algorithm
         private void QuickSortButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -90,7 +91,7 @@ namespace sorting_algorithms
 
             return i + 1;
         }
-
+        //BubbleSort algorithm
         private void BubbleSortButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -130,14 +131,56 @@ namespace sorting_algorithms
                         int temp = arr[j];
                         arr[j] = arr[j + 1];
                         arr[j + 1] = temp;
-
                         swapped = true;
                     }
                 }
 
-                if (!swapped)
-                    break;
+                if (!swapped) break;
             }
         }
+
+
+        //InsertionSort algorithm
+        private void InsertionSortButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int[] clonedNumbers = (int[])numbers.Clone();
+
+                var stopwatch = Stopwatch.StartNew();
+                InsertionSort(clonedNumbers);
+                stopwatch.Stop();
+
+                var sortedNumbersWindow = new SortedNumbersWindow(
+                    string.Join(", ", clonedNumbers),
+                    "InsertionSort",
+                    stopwatch.ElapsedMilliseconds
+                );
+
+                sortedNumbersWindow.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void InsertionSort(int[] arr)
+        {
+            for (int i = 1; i < arr.Length; i++)
+            {
+                int key = arr[i];
+                int j = i - 1;
+
+                while (j >= 0 && arr[j] > key)
+                {
+                    arr[j + 1] = arr[j];
+                    j--;
+                }
+
+                arr[j + 1] = key;
+            }
+        }
+
     }
 }
