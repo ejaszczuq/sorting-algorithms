@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox Name="tbNumbers" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF731A1A" Background="#FFDC5D5D" BorderBrush="#FF731A1A">numbers</TextBox>
+        <TextBox Name="tbNumbers" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF731A1A" Background="#FFDC5D5D" BorderBrush="#FF731A1A" BorderThickness="2">numbers</TextBox>
         <Button x:Name="bNumbers" Content="Generate random numbers" HorizontalAlignment="Center" Click="GenerateButton_Click" Height="37" Margin="1,307,1,1" VerticalAlignment="Top" Width="152" Background="#FF9E2929" Foreground="#FFDC5C5C" BorderBrush="#FFCA5454"/>
         <Button Content="QuickSort" HorizontalAlignment="Left" Height="28" Margin="171,111,0,0" VerticalAlignment="Top" Width="74" Click="QuickSortButton_Click"/>
         <Button Content="BubbleSort" HorizontalAlignment="Left" Height="28" Margin="276,111,0,0" VerticalAlignment="Top" Width="74" Click="BubbleSortButton_Click"/>
