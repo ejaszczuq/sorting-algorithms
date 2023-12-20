@@ -1,31 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace sorting_algorithms
 {
     public partial class MainWindow : Window
     {
-        private int[] numbers = new int[10];
+        private int[] numbers = new int[1000];
         private Random random = new Random();
 
         public MainWindow()
         {
             InitializeComponent();
         }
-        public int Length => numbers.Length;
+
         private void GenerateButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -49,14 +37,19 @@ namespace sorting_algorithms
         {
             try
             {
-                //Clone the array to avoid modifying the original array
                 int[] clonedNumbers = (int[])numbers.Clone();
 
-                //Perform quicksort
+                var stopwatch = Stopwatch.StartNew();
                 QuickSort(clonedNumbers, 0, clonedNumbers.Length - 1);
+                stopwatch.Stop();
 
-                //Display the sorted array
-                tbNumbers.Text = string.Join(", ", clonedNumbers);
+                var sortedNumbersWindow = new SortedNumbersWindow(
+                    string.Join(", ", clonedNumbers),
+                    "QuickSort",
+                    stopwatch.ElapsedMilliseconds
+                );
+
+                sortedNumbersWindow.Show();
             }
             catch (Exception ex)
             {
@@ -64,7 +57,6 @@ namespace sorting_algorithms
             }
         }
 
-        //Quicksort algorithm
         private void QuickSort(int[] arr, int first, int last)
         {
             if (first < last)
@@ -86,24 +78,66 @@ namespace sorting_algorithms
                 if (arr[j] < pivot)
                 {
                     i++;
-
-                    //Swap arr[i] and arr[j]
                     int temp = arr[i];
                     arr[i] = arr[j];
                     arr[j] = temp;
                 }
             }
 
-            //Swap arr[i+1] and arr[last] (pivot)
             int tempPivot = arr[i + 1];
             arr[i + 1] = arr[last];
             arr[last] = tempPivot;
 
             return i + 1;
         }
+
+        private void BubbleSortButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int[] clonedNumbers = (int[])numbers.Clone();
+
+                var stopwatch = Stopwatch.StartNew();
+                BubbleSort(clonedNumbers);
+                stopwatch.Stop();
+
+                var sortedNumbersWindow = new SortedNumbersWindow(
+                    string.Join(", ", clonedNumbers),
+                    "BubbleSort",
+                    stopwatch.ElapsedMilliseconds
+                );
+
+                sortedNumbersWindow.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void BubbleSort(int[] arr)
+        {
+            bool swapped;
+
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                swapped = false;
+
+                for (int j = 0; j < arr.Length - 1 - i; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+
+                        swapped = true;
+                    }
+                }
+
+                if (!swapped)
+                    break;
+            }
+        }
     }
 }
-
-
-
-
