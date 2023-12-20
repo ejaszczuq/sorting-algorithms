@@ -12,6 +12,7 @@
         <Button Content="QuickSort" HorizontalAlignment="Left" Height="28" Margin="171,111,0,0" VerticalAlignment="Top" Width="74" Click="QuickSortButton_Click"/>
         <Button Content="BubbleSort" HorizontalAlignment="Left" Height="28" Margin="276,111,0,0" VerticalAlignment="Top" Width="74" Click="BubbleSortButton_Click"/>
         <Button Content="InsertionSort" HorizontalAlignment="Left" Height="28" Margin="381,111,0,0" VerticalAlignment="Top" Width="74" Click="InsertionSortButton_Click"/>
+       
 
     </Grid>
 </Window>

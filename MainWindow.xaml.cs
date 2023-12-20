@@ -91,6 +91,7 @@ namespace sorting_algorithms
 
             return i + 1;
         }
+
         //BubbleSort algorithm
         private void BubbleSortButton_Click(object sender, RoutedEventArgs e)
         {
@@ -118,12 +119,8 @@ namespace sorting_algorithms
 
         private void BubbleSort(int[] arr)
         {
-            bool swapped;
-
             for (int i = 0; i < arr.Length - 1; i++)
             {
-                swapped = false;
-
                 for (int j = 0; j < arr.Length - 1 - i; j++)
                 {
                     if (arr[j] > arr[j + 1])
@@ -131,14 +128,10 @@ namespace sorting_algorithms
                         int temp = arr[j];
                         arr[j] = arr[j + 1];
                         arr[j + 1] = temp;
-                        swapped = true;
                     }
                 }
-
-                if (!swapped) break;
             }
         }
-
 
         //InsertionSort algorithm
         private void InsertionSortButton_Click(object sender, RoutedEventArgs e)
@@ -181,6 +174,5 @@ namespace sorting_algorithms
                 arr[j + 1] = key;
             }
         }
-
     }
 }
