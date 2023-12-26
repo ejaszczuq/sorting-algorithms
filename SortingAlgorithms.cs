@@ -85,7 +85,7 @@ namespace sorting_algorithms
             int max = arr.Max();
             int[] count = new int[max + 1];
 
-            for (int i = 0; i < n; ++i)
+            for (int i = 0; n < i; ++i)
             {
                 count[arr[i]]++;
             }
@@ -100,5 +100,45 @@ namespace sorting_algorithms
                 }
             }
         }
+
+        //MergeSort algorithm
+        internal static void MergeSort(int[] arr)
+        {
+            if (arr == null || arr.Length <= 1) return;
+
+            int[] tempArray = new int[arr.Length];
+            MergeSortHelper(arr, tempArray, 0, arr.Length - 1);
+        }
+
+        private static void MergeSortHelper(int[] arr, int[] tempArray, int left, int right)
+        {
+            if (left < right)
+            {
+                int middle = (left + right) / 2;
+                MergeSortHelper(arr, tempArray, left, middle);
+                MergeSortHelper(arr, tempArray, middle + 1, right);
+                Merge(arr, tempArray, left, middle, right);
+            }
+        }
+
+        private static void Merge(int[] arr, int[] tempArray, int left, int middle, int right)
+        {
+            int leftIndex = left, rightIndex = middle + 1, tempIndex = left;
+
+            while (leftIndex <= middle && rightIndex <= right)
+            {
+                tempArray[tempIndex++] = (arr[leftIndex] <= arr[rightIndex]) ? arr[leftIndex++] : arr[rightIndex++];
+            }
+
+            while (leftIndex <= middle)
+                tempArray[tempIndex++] = arr[leftIndex++];
+
+            while (rightIndex <= right)
+                tempArray[tempIndex++] = arr[rightIndex++];
+
+            for (int i = left; i <= right; i++)
+                arr[i] = tempArray[i];
+        }
     }
 }
+
