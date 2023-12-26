@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace sorting_algorithms
 {
-    internal static class SortingAlghoritms 
+    internal static class SortingAlghoritms
     {
         //QuickSort algorithm
         internal static void QuickSort(int[] arr, int first, int last)
@@ -75,6 +75,29 @@ namespace sorting_algorithms
                 }
 
                 arr[j + 1] = key;
+            }
+        }
+
+        //CountingSort algorithm
+        internal static void CountingSort(int[] arr)
+        {
+            int n = arr.Length;
+            int max = arr.Max();
+            int[] count = new int[max + 1];
+
+            for (int i = 0; i < n; ++i)
+            {
+                count[arr[i]]++;
+            }
+
+            int lastIndex = 0;
+
+            for (int i = 0; i <= max; ++i)
+            {
+                while (count[i]-- > 0)
+                {
+                    arr[lastIndex++] = i;
+                }
             }
         }
     }
