@@ -1,22 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace sorting_algorithms
 {
-    internal static class SortingAlghoritms
+    internal static class SortingAlgorithms
     {
-        //QuickSort algorithm
-        internal static void QuickSort(int[] arr, int first, int last)
+        #region QuickSort algorithm
+        internal static void QuickSort(int[] arr)
+        {
+            QuickSortRecursive(arr, 0, arr.Length - 1);
+        }
+
+        internal static void QuickSortRecursive(int[] arr, int first, int last)
         {
             if (first < last)
             {
                 int partitionIndex = Partition(arr, first, last);
 
-                QuickSort(arr, first, partitionIndex - 1);
-                QuickSort(arr, partitionIndex + 1, last);
+                QuickSortRecursive(arr, first, partitionIndex - 1);
+                QuickSortRecursive(arr, partitionIndex + 1, last);
             }
         }
 
@@ -42,8 +43,9 @@ namespace sorting_algorithms
 
             return i + 1;
         }
+        #endregion
 
-        //BubbleSort algorithm
+        #region BubbleSort algorithm
         internal static void BubbleSort(int[] arr)
         {
             for (int i = 0; i < arr.Length - 1; i++)
@@ -59,8 +61,9 @@ namespace sorting_algorithms
                 }
             }
         }
+        #endregion
 
-        //InsertionSort algorithm
+        #region InsertionSort algorithm
         internal static void InsertionSort(int[] arr)
         {
             for (int i = 1; i < arr.Length; i++)
@@ -77,15 +80,16 @@ namespace sorting_algorithms
                 arr[j + 1] = key;
             }
         }
+        #endregion
 
-        //CountingSort algorithm
+        #region CountingSort algorithm
         internal static void CountingSort(int[] arr)
         {
             int n = arr.Length;
             int max = arr.Max();
             int[] count = new int[max + 1];
 
-            for (int i = 0; n < i; ++i)
+            for (int i = 0; i < n; ++i)
             {
                 count[arr[i]]++;
             }
@@ -100,8 +104,9 @@ namespace sorting_algorithms
                 }
             }
         }
+        #endregion
 
-        //MergeSort algorithm
+        #region MergeSort algorithm
         internal static void MergeSort(int[] arr)
         {
             if (arr == null || arr.Length <= 1) return;
@@ -139,8 +144,9 @@ namespace sorting_algorithms
             for (int i = left; i <= right; i++)
                 arr[i] = tempArray[i];
         }
+        #endregion
 
-        //SelectionSort algorithm
+        #region SelectionSort algorithm
         internal static void SelectionSort(int[] arr)
         {
             int n = arr.Length;
@@ -162,6 +168,7 @@ namespace sorting_algorithms
                 arr[i] = temp;
             }
         }
+        #endregion
     }
 }
 
