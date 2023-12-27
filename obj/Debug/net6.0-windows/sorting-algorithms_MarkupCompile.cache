@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\kopyt\OneDrive\Pulpit\sorting-algorithms\sorting-algorithms\App.xaml
-21853119319
+4-719562439
 
-4463238974
+81043143527
 194-1325968647
-MainWindow.xaml;SortedNumbersWindow.xaml;
+MainContent.xaml;MainWindow.xaml;SortedNumbersPage.xaml;Start.xaml;
 
 False
 

@@ -38,5 +38,9 @@ C:\Users\kopyt\OneDrive\Pulpit\sorting-algorithms\sorting-algorithms\obj\Debug\n
 C:\Users\kopyt\OneDrive\Pulpit\sorting-algorithms\sorting-algorithms\obj\Debug\net6.0-windows\sorting-algorithms.pdb
 C:\Users\kopyt\OneDrive\Pulpit\sorting-algorithms\sorting-algorithms\obj\Debug\net6.0-windows\sorting-algorithms.genruntimeconfig.cache
 C:\Users\kopyt\OneDrive\Pulpit\sorting-algorithms\sorting-algorithms\obj\Debug\net6.0-windows\ref\sorting-algorithms.dll
-C:\Users\kopyt\OneDrive\Pulpit\sorting-algorithms\sorting-algorithms\obj\Debug\net6.0-windows\SortedNumbersWindow.baml
-C:\Users\kopyt\OneDrive\Pulpit\sorting-algorithms\sorting-algorithms\obj\Debug\net6.0-windows\SortedNumbersWindow.g.cs
+C:\Users\kopyt\OneDrive\Pulpit\sorting-algorithms\sorting-algorithms\obj\Debug\net6.0-windows\MainContent.g.cs
+C:\Users\kopyt\OneDrive\Pulpit\sorting-algorithms\sorting-algorithms\obj\Debug\net6.0-windows\SortedNumbersPage.g.cs
+C:\Users\kopyt\OneDrive\Pulpit\sorting-algorithms\sorting-algorithms\obj\Debug\net6.0-windows\MainContent.baml
+C:\Users\kopyt\OneDrive\Pulpit\sorting-algorithms\sorting-algorithms\obj\Debug\net6.0-windows\SortedNumbersPage.baml
+C:\Users\kopyt\OneDrive\Pulpit\sorting-algorithms\sorting-algorithms\obj\Debug\net6.0-windows\Start.g.cs
+C:\Users\kopyt\OneDrive\Pulpit\sorting-algorithms\sorting-algorithms\obj\Debug\net6.0-windows\Start.baml
